@@ -1,0 +1,28 @@
+body {
+    background-color: black;
+    color: white;
+}
+
+.navbar * { 
+    color: white;
+}
+
+.logo {
+    filter: brightness(1) ;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.button-rad {
+    border-radius: 30px;
+}
+
+a {
+    color: white;
+}
+
+.sidebar > div > ul > li > h3 > a {
+    text-decoration: none;
+}

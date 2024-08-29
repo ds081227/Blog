@@ -1,0 +1,53 @@
+<%- include('partials/header.ejs') %>
+
+
+<div class="min-vh-100">
+    <div class="container my-5">
+        <div class="row flex-row justify-content-evenly">
+            <div class="main-content col-12 col-xxl-8 col-xl-8 bg-dark rounded">
+                <ul class="p-0">
+                <% for ( let i = 0; i < data.length; i++ ) { %>
+                    <li class="p-1">
+                        <p class="fs-6 my-3 fw-light"><%= data[i].time %></p>
+                        <h3 class="fs-2">
+                            <a href="/view/<%= i %>">
+                            <%= data[i].title %>
+                            </a>
+                        </h3>
+                        <p class="fs-5 my-4"><%= data[i].content %></p>
+                        <hr>
+                    </li>
+                <% } %>
+                </ul>
+            </div>
+
+            <div class="sidebar col-3 bg-dark rounded d-none d-lg-none d-md-none d-sm-none d-xl-block text-center">
+                <div class="text-center my-4">
+                    <a href="/create">
+                        <button class="btn btn-light fs-5 btn-lg button-rad" style="width: 90%;">Create Post</button>
+                    </a>
+                </div>
+                <div class="px-3 text-start">
+                    <p>RECENT POST</p>
+                    <ul class="p-0">
+                        <% for ( let i = 0; i < data.length; i++ ) { %>
+                        <li>
+                            <h3 class="fs-6">
+                                <a href="/view/<%= i %>">
+                                <%= data[i].title %>
+                                </a>
+                            </h3>
+                            <hr>
+                        </li>
+                        <% } %>
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<%- include('partials/footer.ejs') %>
